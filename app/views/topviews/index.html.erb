@@ -1,0 +1,29 @@
+<h2>gmap</h2>
+<div id='map'></div>
+
+<style>
+#map{
+  height: 400px;
+  width:600px;
+}
+
+</style>
+
+<script>
+  function initMap() {
+    var map;
+    var target = document.getElementById('map')
+    var empire = {lat: 40.748441, lng: -73.985664};
+    map = new google.maps.Map(target, {
+      center: empire,
+      zoom: 14
+    });  
+
+    var marker = new google.maps.Marker({
+      position: map.getCenter(),
+      map: map
+    });
+  }
+
+</script> 
+<script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBN-LeIYRaXgplwxC33hUz5cW7f9SV4vMg&callback=initMap&libraries=places" async defer></script>
